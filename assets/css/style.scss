@@ -1,0 +1,127 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/*#region Header-Start*/
+
+.text-line::after{
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    content: " ";
+    width: 0%;
+    transition: 0.5s;
+    margin-top: 8px;
+    height: 4px;
+    background-color: #FE5F41;
+    position: absolute;
+
+}
+
+.text-line1::after{
+    width: 100%!important;
+}
+
+.main-header{
+    background-color: #FFF4F2;
+    background-color: transparent;
+    height: 80px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px 120px;
+    // background-color: transparent;
+    .logo-nav{
+        display: flex;
+        align-items: center;
+        ul{
+            display: flex;
+            padding-left: 65px;
+            li{
+                position: relative;
+                font-family: sans-serif, monospace;
+                padding: 0px 20px;
+                font-size: 16px;
+                font-weight: 600;
+                color: #4D312C;
+                transition: 0.8s all;
+                &:hover{
+                    color: #EC583A;
+                }
+            }
+            li:hover::after{
+                width: 100%!important;
+            }
+        }
+    }
+    .booktable-number{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: sans-serif;
+        width: 30%;
+        white-space: nowrap;
+        span{
+            position: relative;
+            font-size: 18px;
+            color:#EC583A;
+            margin-left: 150px;
+            &::after{
+                width: 100%;
+            }
+        }
+        button{
+            padding: 20px 35px;
+            background-color: #EC583A;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 18px;
+            i{
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+/*#endregion Header-End*/
+
+/*#region Main-Start*/
+
+/*#region First-Div-Start*/
+    .first-div{
+        height: 880px;
+        background-color: red;
+        display: flex;
+        .left-div{
+            width: 50%;
+            height: 880px;
+            background-color: #FFF4F2;
+        }
+        .right-div{
+            width: 50%;
+            height: 880px;
+            background-color: purple;
+        }
+    }
+/*#endregion First-Div-End*/
+
+/*#endregion Main-End*/
+
+
+/*#region Responsive*/
+@media only screen and (max-width: 1800px){
+    .booktable-number{
+        span{
+
+        }
+        button{
+
+        }
+    }
+}
+/*#endregion Responsive-end*/
