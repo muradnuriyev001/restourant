@@ -6,6 +6,10 @@
     text-decoration: none;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 /*#region Header-Start*/
 
 .text-line::after{
@@ -27,13 +31,15 @@
 }
 
 .main-header{
-    background-color: #FFF4F2;
+    // background-color: #FFF4F2;
     background-color: transparent;
     height: 80px;
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 0px 120px;
+    position: absolute;
+    z-index: 1;
     // background-color: transparent;
     .logo-nav{
         display: flex;
@@ -61,17 +67,20 @@
     .booktable-number{
         display: flex;
         align-items: center;
-        justify-content: space-between;
         font-family: sans-serif;
-        width: 30%;
         white-space: nowrap;
         span{
             position: relative;
             font-size: 18px;
             color:#EC583A;
-            margin-left: 150px;
+            margin-right: 25px;
+            color: white;
+            transition: 0.5s all;
             &::after{
                 width: 100%;
+            }
+            &:hover{
+                color:#EC583A;
             }
         }
         button{
@@ -90,22 +99,176 @@
 
 /*#endregion Header-End*/
 
+
 /*#region Main-Start*/
 
 /*#region First-Div-Start*/
     .first-div{
         height: 880px;
-        background-color: red;
+        background-color: #FFF4F2;
         display: flex;
+        font-family: sans-serif;
+
         .left-div{
             width: 50%;
-            height: 880px;
+            height: 100%;
             background-color: #FFF4F2;
+            position: relative;
+            user-select: none;
+            .left-div-text{
+                padding: 0px 70px 0px 25%;
+                top: 50%;
+                transform: translateY(-50%);
+                margin: auto;
+                position: absolute;
+
+                p{
+                    font-size: 60px;
+                    color: #4D312C;
+                    font-weight: 800;
+                    animation: leftdivanimation 3s;
+
+                    
+                }
+                .lft-txt{
+                    color: #4D312C;
+                    padding: 20px 0px;
+                    font-weight: 600;
+                    animation: leftdivanimation1 2s;
+                }
+                .left-div-buttons{    
+                    position: absolute;  
+                    // animation: leftdivanimation1 3s;
+                    animation: leftdivtextanimation 3s;
+                    .btn1{
+                        background-color: #FE5F41;
+                        color: white;
+                        border: none;
+                        border-radius: 50px;
+                        padding: 25px 50px;
+                        font-size: 17px;
+                        font-weight: 800;
+                    }
+                    .btn2{
+                        margin-left: 45px;
+                        color: #FE5F41;
+                        font-size: 20px;
+                        background-color: #FFF4F2;
+                        border: none;
+                        font-weight: 800;
+                    }
+                }
+            }
         }
         .right-div{
             width: 50%;
-            height: 880px;
+            height: 100%!important;
             background-color: purple;
+            background-image: url('../img/maindivimg.jpg');
+            background-size: cover;
+            user-select: none;
+            position: relative;
+            animation: maindivanimation 1.5s;
+            .comment-rightdiv{
+                animation: commentanimation 2s;
+                width: 400px;
+                height: 180px;
+                background-color: white ;
+                position: absolute;
+                bottom: 10%;
+                left: 10%;
+                border-radius: 10px;
+                img{
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50px;
+                    position: absolute;
+                    right: 10%;
+                    bottom: 10%;
+                }
+                .comment-text-stars{
+                    padding-top: 25px;
+                    padding-left: 15px;
+                }
+                .comment-text{
+                    font-weight: 800;
+                    color: #4D312C;
+                    font-size: 17px;
+                }
+                .stars{
+                    color: #F86011;
+                    padding-top: 40px;
+                    span{
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+    }
+    
+    .second-div{
+        background-color: white;
+        height: 750px;
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        .second-div-text{
+            text-align: center;
+            color: #4D312C;
+            margin-bottom: 25%;
+            line-height: 2;
+            width: 33%;
+            p{
+                font-size: 45px;  
+                font-weight: 700;       
+            }
+            span{
+                font-size: 20px;
+            }
+        }
+
+        .second-div-cards{
+            display: flex;
+            position: absolute;
+            top: 38%;
+            div{
+                width: 420px;
+                height: 340px;
+                background-color: white;
+                margin-left: 3%;
+                border: 1px solid rgb(199, 198, 198);
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding-top: 5%;
+                transition: 1s;
+                &:hover p{
+                    color: #FE5F41;
+                    transition: 0.5s all;
+                }
+                &:hover{
+                    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, #FE5F41 0px 50px 50px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                    transition: 1s all;
+                }
+                p{
+                    font-size: 22px;
+                    color: #4C322D;
+                    font-weight: 800;
+                    padding-top: 7%;
+
+                }
+                
+                span{
+                    color: #4C322D;
+                    padding-top: 7%;
+                    width: 70%;
+                }
+            }
+
         }
     }
 /*#endregion First-Div-End*/
@@ -124,4 +287,73 @@
         }
     }
 }
+/*#endregion Responsive-end*/
+
+/*#region Animation*/ 
+
+@keyframes maindivanimation{
+    from{
+        left: 50%;
+    }
+
+    to{
+        left: 0%;
+    }
+}
+
+@keyframes leftdivanimation{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes leftdivanimation1{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes leftdivtextanimation{
+    0%{
+        opacity: 0;
+
+    }
+
+    50%{
+        opacity: 0;
+        bottom: -200px;
+    }
+
+    100%{
+        bottom: -74px;
+        opacity: 1;
+    }
+}
+
+@keyframes commentanimation {
+    0%{
+        scale: 0;
+    }
+
+    50%{
+        scale: 0;
+    }
+
+    100%{
+        scale: 1;
+    }
+}
+
 /*#endregion Responsive-end*/
