@@ -4,13 +4,38 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
 }
 
+input:focus {
+  outline: #f86011 1px solid;
+}
+
+ul {
+  margin-bottom: 0 !important;
+  cursor: pointer;
+}
+
 /*#region Header-Start*/
+.hc {
+  background-color: #fff4f2 !important;
+  position: fixed !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 40px 20px -7px;
+  animation: headerjsanimation 0.7s;
+  overflow: hidden;
+}
+.hc span {
+  color: #fe5f41 !important;
+}
+
 .text-line::after {
   top: 100%;
   left: 50%;
@@ -20,7 +45,7 @@ body {
   transition: 0.5s;
   margin-top: 8px;
   height: 4px;
-  background-color: #FE5F41;
+  background-color: #fe5f41;
   position: absolute;
 }
 
@@ -30,21 +55,29 @@ body {
 
 .main-header {
   background-color: transparent;
-  height: 80px;
+  height: 90px;
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 0px 120px;
+  padding: 0px 3%;
   position: absolute;
   z-index: 1;
 }
 .main-header .logo-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+.main-header .logo-nav i {
+  display: none;
+}
+.main-header .logo-nav img {
+  height: 75%;
 }
 .main-header .logo-nav ul {
   display: flex;
-  padding-left: 65px;
+  align-items: center;
+  padding-left: 10%;
 }
 .main-header .logo-nav ul li {
   position: relative;
@@ -52,11 +85,11 @@ body {
   padding: 0px 20px;
   font-size: 16px;
   font-weight: 600;
-  color: #4D312C;
+  color: #4d312c;
   transition: 0.8s all;
 }
 .main-header .logo-nav ul li:hover {
-  color: #EC583A;
+  color: #ec583a;
 }
 .main-header .logo-nav ul li:hover::after {
   width: 100% !important;
@@ -67,23 +100,27 @@ body {
   font-family: sans-serif;
   white-space: nowrap;
 }
-.main-header .booktable-number span {
+.main-header .booktable-number a {
+  text-decoration: none;
+}
+.main-header .booktable-number a span {
   position: relative;
   font-size: 18px;
-  color: #EC583A;
+  color: #ec583a;
   margin-right: 25px;
   color: white;
   transition: 0.5s all;
+  font-weight: 500;
 }
-.main-header .booktable-number span::after {
+.main-header .booktable-number a span::after {
   width: 100%;
 }
-.main-header .booktable-number span:hover {
-  color: #EC583A;
+.main-header .booktable-number a span:hover {
+  color: #ec583a;
 }
 .main-header .booktable-number button {
   padding: 20px 35px;
-  background-color: #EC583A;
+  background-color: #ec583a;
   border: none;
   border-radius: 50px;
   color: white;
@@ -98,14 +135,14 @@ body {
 /*#region First-Div-Start*/
 .first-div {
   height: 880px;
-  background-color: #FFF4F2;
+  background-color: #fff4f2;
   display: flex;
   font-family: sans-serif;
 }
 .first-div .left-div {
   width: 50%;
   height: 100%;
-  background-color: #FFF4F2;
+  background-color: #fff4f2;
   position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -120,12 +157,12 @@ body {
 }
 .first-div .left-div .left-div-text p {
   font-size: 60px;
-  color: #4D312C;
+  color: #4d312c;
   font-weight: 800;
   animation: leftdivanimation 3s;
 }
 .first-div .left-div .left-div-text .lft-txt {
-  color: #4D312C;
+  color: #4d312c;
   padding: 20px 0px;
   font-weight: 600;
   animation: leftdivanimation1 2s;
@@ -135,7 +172,7 @@ body {
   animation: leftdivtextanimation 3s;
 }
 .first-div .left-div .left-div-text .left-div-buttons .btn1 {
-  background-color: #FE5F41;
+  background-color: #fe5f41;
   color: white;
   border: none;
   border-radius: 50px;
@@ -145,9 +182,9 @@ body {
 }
 .first-div .left-div .left-div-text .left-div-buttons .btn2 {
   margin-left: 45px;
-  color: #FE5F41;
+  color: #fe5f41;
   font-size: 20px;
-  background-color: #FFF4F2;
+  background-color: #fff4f2;
   border: none;
   font-weight: 800;
 }
@@ -162,6 +199,7 @@ body {
           user-select: none;
   position: relative;
   animation: maindivanimation 1.5s;
+  overflow: hidden;
 }
 .first-div .right-div .comment-rightdiv {
   animation: commentanimation 2s;
@@ -187,30 +225,35 @@ body {
 }
 .first-div .right-div .comment-rightdiv .comment-text {
   font-weight: 800;
-  color: #4D312C;
+  color: #4d312c;
   font-size: 17px;
 }
 .first-div .right-div .comment-rightdiv .stars {
-  color: #F86011;
+  color: #f86011;
   padding-top: 40px;
 }
 .first-div .right-div .comment-rightdiv .stars span {
   font-weight: 900;
 }
 
+/*#endregion First-Div-End*/
+/*#region Second-Div*/
 .second-div {
   background-color: white;
-  height: 750px;
+  padding: 150px 0px;
   font-family: sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  flex-direction: column;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .second-div .second-div-text {
   text-align: center;
-  color: #4D312C;
-  margin-bottom: 25%;
+  color: #4d312c;
+  padding-bottom: 55px;
   line-height: 2;
   width: 33%;
 }
@@ -223,46 +266,341 @@ body {
 }
 .second-div .second-div-cards {
   display: flex;
-  position: absolute;
-  top: 38%;
+  justify-content: space-evenly;
+  width: 80%;
 }
 .second-div .second-div-cards div {
   width: 420px;
-  height: 340px;
+  padding: 40px 0px;
   background-color: white;
-  margin-left: 3%;
   border: 1px solid rgb(199, 198, 198);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 5%;
+  margin-top: 4%;
   transition: 1s;
 }
 .second-div .second-div-cards div:hover p {
-  color: #FE5F41;
+  color: #fe5f41;
   transition: 0.5s all;
 }
 .second-div .second-div-cards div:hover {
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, #FE5F41 0px 50px 50px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  transition: 1s all;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, #fe5f41 0px 50px 50px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .second-div .second-div-cards div p {
   font-size: 22px;
-  color: #4C322D;
+  color: #4c322d;
   font-weight: 800;
   padding-top: 7%;
 }
 .second-div .second-div-cards div span {
-  color: #4C322D;
+  color: #4c322d;
   padding-top: 7%;
   width: 70%;
 }
 
-/*#endregion First-Div-End*/
+/*#endregion Second-Div-End*/
+/*#region Third-Div*/
+.third-div {
+  background-image: url("../img/section-bg1.jpg");
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  --width: 75%;
+}
+.third-div .carouselcategory {
+  width: var(--width);
+  padding-top: 15px;
+}
+.third-div .carouselcategory ul {
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+}
+.third-div .carouselcategory ul li {
+  margin-right: 1%;
+  transition: color 0.5s;
+  position: relative;
+}
+.third-div .carouselcategory ul li:hover {
+  color: #ec583a;
+}
+.third-div .carouselcategory ul li:hover::after {
+  width: 100% !important;
+  margin-top: 12px !important;
+}
+.third-div .carouselcategory hr {
+  background-color: gray;
+}
+.third-div .third-div-text {
+  color: white;
+  width: var(--width);
+}
+.third-div .third-div-text p {
+  font-size: 45px;
+  font-weight: 800;
+}
+.third-div .third-div-text span {
+  color: gray;
+  font-size: 18px;
+}
+.third-div .carouselbox {
+  width: var(--width);
+}
+
+/*#endregion Third-Div*/
+/*#region Fourth-Div*/
+.fourth-div {
+  background-color: white;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fourth-div form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 5%;
+}
+.fourth-div form .booktabletext {
+  margin-left: 5%;
+  width: 70%;
+  padding-bottom: 25px;
+}
+.fourth-div form .booktabletext p {
+  color: #4d312c;
+  font-size: 55px;
+  padding-bottom: 15px;
+}
+.fourth-div form .input1 {
+  width: 400px;
+  height: 50px;
+  border: 1px gray solid;
+  border-radius: 25px;
+  padding-left: 25px;
+}
+.fourth-div form .input2 {
+  width: 197px;
+  border-radius: 25px;
+  height: 50px;
+  border: 1px gray solid;
+  margin-top: 3%;
+  padding-left: 15px;
+}
+.fourth-div form .input3 {
+  width: 400px;
+  padding-left: 15px;
+}
+.fourth-div form .input3:focus {
+  border: none;
+}
+.fourth-div form .input4 {
+  width: 400px;
+  height: 150px;
+  border: 1px gray solid;
+  border-radius: 15px;
+  margin-top: 3%;
+  padding-bottom: 90px;
+  padding-left: 15px;
+}
+.fourth-div form .input5 {
+  width: 350px;
+  height: 50px;
+  margin-top: 3%;
+  background-color: #ec583a;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 20px;
+}
+
+/*#endregion Fourth-Div*/
 /*#endregion Main-End*/
+/*#region Footer-Start*/
+.footer {
+  background-color: #fff4f2;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .footer-content {
+  margin-top: 1%;
+}
+.footer .footer-content img {
+  width: 250px;
+  height: 80px;
+}
+.footer .footer-content .footerlogos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px;
+}
+.footer .footer-content .footerlogos i {
+  color: #f86011;
+  font-size: 40px;
+  margin-left: 5%;
+  transition: 1s all;
+}
+.footer .footer-content .footerlogos i:hover {
+  scale: 1.5;
+}
+.footer .footer-content span {
+  font-size: 15px;
+}
+
+/*#endregion Footer-End*/
 /*#region Responsive*/
+@media only screen and (max-width: 1376px) {
+  .main-header {
+    padding: 0px 2%;
+  }
+  .main-header .logo-nav ul {
+    padding-left: 5%;
+  }
+  .main-header .logo-nav ul li {
+    padding: 0px 10px;
+  }
+  .main-header .logo-nav img {
+    width: 28% !important;
+  }
+  .main-header .booktable-number button {
+    padding: 15px 20px;
+    font-size: 15px;
+  }
+  .second-div-cards {
+    flex-wrap: wrap;
+  }
+  .second-div-cards div {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 1270px) {
+  .fourth-div img {
+    width: 450px;
+  }
+  .booktabletext {
+    margin-right: 5%;
+    max-width: 100%;
+    padding-bottom: 10px;
+  }
+  .booktabletext p {
+    color: red;
+  }
+}
+@media only screen and (max-width: 1163px) {
+  .main-header {
+    padding: 0px 1%;
+  }
+  .first-div .left-div .left-div-text {
+    padding: 0px 40px 0px 15%;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .first-div .left-div .left-div-text {
+    padding: 0px 30px 0px 15%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .main-header .logo-nav {
+    justify-content: left;
+    margin-left: 2%;
+  }
+  .main-header .logo-nav i {
+    display: block;
+    font-size: 35px;
+  }
+  .main-header .logo-nav img {
+    height: -moz-max-content;
+    height: max-content;
+    margin-left: 2%;
+  }
+  .main-header .logo-nav ul {
+    display: none;
+  }
+  .first-div .left-div .left-div-text .left-div-buttons .btn1 {
+    padding: 15px 30px;
+  }
+  .first-div .left-div .left-div-text .left-div-buttons .btn2 {
+    margin-left: 10px;
+  }
+  .right-div .comment-rightdiv {
+    background-color: red;
+    width: 200px;
+    height: 160px;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .second-div .second-div-cards {
+    flex-wrap: wrap;
+  }
+  .second-div .second-div-cards div {
+    width: 1000px;
+  }
+  .fourth-div img {
+    display: none;
+  }
+}
+@media only screen and (max-width: 920px) {
+  .first-div .left-div .left-div-text p {
+    font-size: 45px;
+  }
+  .first-div .left-div .left-div-text .lft-txt {
+    font-weight: 400;
+  }
+  .first-div .right-div .comment-rightdiv {
+    width: 320px;
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .left-div-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .second-div .second-div-text p {
+    font-size: 35px;
+  }
+  .second-div .second-div-text span {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 735px) {
+  .first-div .right-div .comment-rightdiv {
+    width: 310px;
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .first-div .right-div .comment-rightdiv {
+    left: 2%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .first-div .left-div {
+    width: 100%;
+  }
+  .first-div .left-div .left-div-buttons {
+    flex-direction: row;
+  }
+  .first-div .right-div {
+    width: 0%;
+  }
+  .main-header {
+    background-color: rgb(227, 187, 187);
+  }
+}
 /*#endregion Responsive-end*/
 /*#region Animation*/
 @keyframes maindivanimation {
@@ -316,4 +654,45 @@ body {
     scale: 1;
   }
 }
-/*#endregion Responsive-end*//*# sourceMappingURL=style.css.map */
+@keyframes headerjsanimation {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 90px;
+  }
+}
+@keyframes upbuttonanimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*#endregion Responsive-end*/
+/*#region Up-Button*/
+.upbutton {
+  right: 2%;
+  bottom: 2%;
+  z-index: 2;
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  background-color: #ec583a;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  display: none;
+  animation: upbuttonanimation 1.5s;
+}
+.upbutton:hover {
+  background-color: orange;
+}
+
+.upbuttonscroll {
+  display: flex;
+}
+
+/*#endregion Up-Button*//*# sourceMappingURL=style.css.map */
